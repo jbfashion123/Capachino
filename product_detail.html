@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ product.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .info {
+            margin-top: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .back {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="/{{ product.image }}" alt="{{ product.name }}">
+    <div class="info">
+        <h2>{{ product.name }}</h2>
+        <div class="price">৳{{ product.price }}</div>
+        <p>{{ product.description }}</p>
+    </div>
+
+    <a href="/shop" class="back">← Back to Products</a>
+</div>
+
+</body>
+</html>
