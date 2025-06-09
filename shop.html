@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ settings.brand_name }}</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        .topbar img {
+            height: 40px;
+        }
+
+        .search-box input {
+            padding: 5px;
+            border-radius: 4px;
+            border: none;
+            width: 200px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 80px;
+            margin-bottom: 100px;
+        }
+
+        .product {
+            width: 30%;
+            margin: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .icon-fixed {
+            position: fixed;
+            bottom: 70px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            z-index: 999;
+        }
+
+        .whatsapp-icon {
+            left: 20px;
+        }
+
+        .messenger-icon {
+            right: 20px;
+        }
+
+        .icon-fixed img {
+            width: 100%;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand">
+        {% if settings.logo %}
+            <img src="/{{ settings.logo }}">
+        {% endif %}
+        <span style="margin-left:10px;">{{ settings.brand_name }}</span>
+    </div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+</div>
+
+<div class="product-grid" id="product-grid">
+    {% for p in products %}
+    <div class="product">
+        <a href="/product/{{ loop.index0 }}">
+            <img src="/{{ p.image }}" alt="{{ p.name }}">
+            <h3>{{ p.name }}</h3>
+            <p>৳{{ p.price }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Floating icons -->
+<a href="https://wa.me/your_whatsapp_number" target="_blank">
+    <div class="icon-fixed whatsapp-icon">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/>
+    </div>
+</a>
+
+<a href="https://m.me/your_facebook_username" target="_blank">
+    <div class="icon-fixed messenger-icon">
+        <img src="https://img.icons8.com/color/48/000000/facebook-messenger.png"/>
+    </div>
+</a>
+
+<!-- Bottom bar -->
+<div class="bottom-bar">
+    <a href="#">📦 Products</a>
+    <a href="#">📂 Category</a>
+    <a href="https://facebook.com/yourpage" target="_blank">🔗 Social</a>
+</div>
+
+<script>
+    const searchInput = document.getElementById('search');
+    const products = document.querySelectorAll('.product');
+
+    searchInput.addEventListener('input', function () {
+        const val = this.value.toLowerCase();
+        products.forEach(p => {
+            const name = p.querySelector('h3').innerText.toLowerCase();
+            p.style.display = name.includes(val) ? '' : 'none';
+        });
+    });
+</script>
+
+</body>
+      </html>
