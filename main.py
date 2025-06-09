@@ -134,7 +134,7 @@ json
 
 # Step 5: Folder Structure
 
-#templates
+/templates
     login.html
     dashboard.html
     add_product.html
