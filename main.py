@@ -139,9 +139,13 @@ werkzeug
 **✅ Step 4: settings.json**
 ```json
 {
-  "logo": "",
-  "brand_name": "My Shop"
-}
+  "brand_name": "আমার স্টোর",
+  "logo": "static/logo.png",
+  "facebook": "https://facebook.com/yourpage",
+  "instagram": "https://instagram.com/yourpage",
+  "whatsapp": "https://wa.me/88017xxxxxxxx",
+  "messenger": "https://m.me/your_username"
+    }
 ```
 
 ---
