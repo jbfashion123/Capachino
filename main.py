@@ -83,7 +83,7 @@ def add_product():
 
     return render_template('add_product.html')
 
-@app.route('/shop [get]')
+@app.route('/shop')
 def shop():
     products = load_products()
     settings = load_settings()
