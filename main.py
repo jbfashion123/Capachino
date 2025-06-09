@@ -113,24 +113,14 @@ def update_settings():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
-```
 
----
-
-```
 flask
 werkzeug
-```
 
----
-
-```json
+#json
 []
-```
 
----
-
-```json
+#json
 {
   "brand_name": "আমার স্টোর",
   "logo": "static/logo.png",
@@ -139,12 +129,8 @@ werkzeug
   "whatsapp": "https://wa.me/88017xxxxxxxx",
   "messenger": "https://m.me/your_username"
     }
-```
 
----
-
-```
-/templates
+#/templates
     login.html
     dashboard.html
     add_product.html
@@ -153,11 +139,8 @@ werkzeug
 
 /static/uploads
 /static/css (যদি CSS লাগে)
-```
 
----
-
-```html
+#html
 <!DOCTYPE html>
 <html>
 <head>
