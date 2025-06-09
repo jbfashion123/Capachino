@@ -87,6 +87,9 @@ def add_product():
 def shop():
     products = load_products()
     settings = load_settings()
+    search = request.args.get('search', '').strip().lower()
+    if search:
+        products = [p for p in products if search in p['name'].lower()]
     return render_template('shop.html', products=products, settings=settings)
 
 @app.route('/product/<int:index>')
