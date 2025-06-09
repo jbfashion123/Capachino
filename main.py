@@ -1,3 +1,5 @@
+**✅ Step 1: main.py**
+
 ```python
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import json
@@ -114,4 +116,78 @@ def update_settings():
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
+```
+
+---
+
+**✅ Step 2: requirements.txt**
+
+```
+flask
+werkzeug
+```
+
+---
+
+**✅ Step 3: products.json** (ফাঁকা অবস্থায় রাখো)
+```json
+[]
+```
+
+---
+
+**✅ Step 4: settings.json**
+```json
+{
+  "logo": "",
+  "brand_name": "My Shop"
+}
+```
+
+---
+
+**✅ Step 5: Folder Structure**
+
+```
+/templates
+    login.html
+    dashboard.html
+    add_product.html
+    shop.html
+    product_detail.html
+
+/static/uploads
+/static/css (যদি CSS লাগে)
+```
+
+---
+
+**✅ Step 6: login.html**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    <form method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" required><br><br>
+        <label>Password:</label>
+        <input type="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
 ```
