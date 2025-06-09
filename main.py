@@ -1,4 +1,4 @@
-**✅ Step 1: main.py**
+Step 1: main.py
 
 ```python
 from flask import Flask, render_template, request, redirect, url_for, session, flash
@@ -120,7 +120,7 @@ if __name__ == '__main__':
 
 ---
 
-**✅ Step 2: requirements.txt**
+Step 2: requirements.txt
 
 ```
 flask
@@ -129,14 +129,14 @@ werkzeug
 
 ---
 
-**✅ Step 3: products.json** (ফাঁকা অবস্থায় রাখো)
+Step 3: products.json (ফাঁকা অবস্থায় রাখো)
 ```json
 []
 ```
 
 ---
 
-**✅ Step 4: settings.json**
+Step 4: settings.json
 ```json
 {
   "brand_name": "আমার স্টোর",
@@ -150,7 +150,7 @@ werkzeug
 
 ---
 
-**✅ Step 5: Folder Structure**
+Step 5: Folder Structure
 
 ```
 /templates
@@ -166,7 +166,7 @@ werkzeug
 
 ---
 
-**✅ Step 6: login.html**
+Step 6: login.html
 
 ```html
 <!DOCTYPE html>
