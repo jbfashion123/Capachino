@@ -1,3 +1,6 @@
+# Step 1: main.py
+
+```python
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 import json
 import os
@@ -114,24 +117,25 @@ if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
 
-#requirements.txt
+# Step 2: requirements.txt
+
 flask
 werkzeug
 
-#json
+# Step 3: products.json (ফাঁকা অবস্থায় রাখো)
+json
 []
 
-#json
+# Step 4: settings.json
+json
 {
-  "brand_name": "আমার স্টোর",
-  "logo": "static/logo.png",
-  "facebook": "https://facebook.com/yourpage",
-  "instagram": "https://instagram.com/yourpage",
-  "whatsapp": "https://wa.me/88017xxxxxxxx",
-  "messenger": "https://m.me/your_username"
-    }
+  "logo": "",
+  "brand_name": "My Shop"
+}
 
-#/templates
+# Step 5: Folder Structure
+
+/templates
     login.html
     dashboard.html
     add_product.html
@@ -141,7 +145,9 @@ werkzeug
 /static/uploads
 /static/css (যদি CSS লাগে)
 
-#html
+# Step 6: login.html
+
+html
 <!DOCTYPE html>
 <html>
 <head>
@@ -167,4 +173,3 @@ werkzeug
     {% endwith %}
 </body>
 </html>
-```
