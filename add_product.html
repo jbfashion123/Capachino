@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+</head>
+<body>
+    <h2>Add New Product</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Product Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Price:</label><br>
+        <input type="text" name="price" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" required></textarea><br><br>
+
+        <label>Category:</label><br>
+        <input type="text" name="category" required><br><br>
+
+        <label>Image:</label><br>
+        <input type="file" name="image" accept="image/*" required><br><br>
+
+        <input type="submit" value="Add Product">
+    </form>
+
+    <br><br>
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+</body>
+                                                </html>
