@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, Admin!</h1>
+
+    <h3>Current Brand Settings</h3>
+    <p>Brand Name: {{ settings.brand_name }}</p>
+    {% if settings.logo %}
+        <img src="/{{ settings.logo }}" height="60">
+    {% endif %}
+
+    <h3>Update Brand</h3>
+    <form action="/settings" method="POST" enctype="multipart/form-data">
+        <label>Brand Name:</label>
+        <input type="text" name="brand_name" required><br><br>
+        <label>Logo:</label>
+        <input type="file" name="logo" required><br><br>
+        <input type="submit" value="Update">
+    </form>
+
+    <h3>Actions</h3>
+    <a href="/add-product">➕ Add Product</a><br>
+    <a href="/shop" target="_blank">🌐 View Customer Site</a><br>
+    <a href="/logout">🔒 Logout</a>
+</body>
+</html>
